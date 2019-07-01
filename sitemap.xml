@@ -2,17 +2,37 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
      <loc>https://www.web3labs.com/</loc>
-     <lastmod>2019-06-28</lastmod>
+     <lastmod>2019-07-01</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>https://www.web3labs.com/getting_started/</loc>
+     <lastmod>2019-07-01</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>https://www.web3labs.com/features/</loc>
+     <lastmod>2019-07-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://www.web3labs.com/metadata/</loc>
-     <lastmod>2019-06-28</lastmod>
+     <lastmod>2019-07-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://www.web3labs.com/tagging/</loc>
-     <lastmod>2019-06-28</lastmod>
+     <lastmod>2019-07-01</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>https://www.web3labs.com/rest/</loc>
+     <lastmod>2019-07-01</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    <url>
+     <loc>https://www.web3labs.com/faqs/</loc>
+     <lastmod>2019-07-01</lastmod>
      <changefreq>daily</changefreq>
     </url>
 </urlset>
