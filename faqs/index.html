@@ -391,6 +391,13 @@
 <p><img alt="Epirus instance name" src="../img/epirus_instance_name.png" /></p>
 <p>If this does not resolve your issue, please <a href="mailto:hi@web3labs.com">email us</a> with details of the parameters you're trying to use.</p>
 </details>
+<details class="warning"><summary>Epirus is stuck on the loading page</summary><p>Please ensure that you are using the correct node endpoint. To verify it, you can run the following command:</p>
+<p><code>bash
+curl -X POST --header "Content-Type: application/json" --data '{"jsonrpc":"2.0","method":"web3_clientVersion","params":[],"id":1}' https://&lt;node-url&gt;</code></p>
+<p>If you get a response like the following then you have configured the correct endpoint.</p>
+<p><code>bash
+{"jsonrpc":"2.0","id":1,"result":"Geth/v1.8.12-stable/linux-amd64/go1.10.8"}</code></p>
+</details>
 <details class="warning"><summary>I'm trying to upload a contract metadata file but it's failing</summary><p>Please refer to the <a href="../metadata/">Contract Registry</a> documentation.</p>
 </details>
                 
