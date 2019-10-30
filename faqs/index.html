@@ -399,18 +399,30 @@
 </details>
 <details class="info"><summary>Are you hiring?</summary><p>Please head to our <a href="https://web3labs.workable.com/">jobs portal</a> for current listings.</p>
 </details>
-<details class="warning"><summary>Unable to create instance on Azure - the template deployment is not valid</summary><p><img alt="Azure creation error" src="../img/azure_create_error.png" />
-<code>The template deployment 'blk-technologies.azure-blockchain-explorer-templa-20190701100047' is not valid according to the validation procedure. The tracking id is '494a6331-33c6-4c13-8871-359117dfa70b'. See inner errors for details. Please see https://aka.ms/arm-deploy for usage details.</code></p>
+<details class="info"><summary>How can I manage users credentials in Epirus on AWS?</summary><p>On the host, you can use the <code>passwd</code> command to add or update user credentials.</p>
+<div class="codehilite"><pre><span></span>$ sudo epirus passwd &lt;username&gt;
+New password: &lt;enter password&gt;
+Re-type new password: &lt;re-enter password&gt;
+Updating password for user &lt;username&gt;
+</pre></div>
+
+</details>
+<details class="warning"><summary>Unable to create instance on Azure - the template deployment is not valid</summary><p><img alt="Azure creation error" src="../img/azure_create_error.png" /></p>
+<div class="codehilite"><pre><span></span>The template deployment &#39;blk-technologies.azure-blockchain-explorer-templa-20190701100047&#39; is not valid according to the validation procedure. The tracking id is &#39;494a6331-33c6-4c13-8871-359117dfa70b&#39;. See inner errors for details. Please see https://aka.ms/arm-deploy for usage details.
+</pre></div>
+
 <p>Check that the instance name that you have used is globally unique. Using a common name such as <code>test</code> in the below example will fail:</p>
 <p><img alt="Epirus instance name" src="../img/epirus_instance_name.png" /></p>
 <p>If this does not resolve your issue, please <a href="mailto:hi@web3labs.com">email us</a> with details of the parameters you're trying to use.</p>
 </details>
 <details class="warning"><summary>Epirus is stuck on the loading page</summary><p>Please ensure that you are using the correct node endpoint. To verify it, you can run the following command:</p>
-<p><code>bash
-curl -X POST --header "Content-Type: application/json" --data '{"jsonrpc":"2.0","method":"web3_clientVersion","params":[],"id":1}' https://&lt;node-url&gt;</code></p>
+<div class="codehilite"><pre><span></span>curl -X POST --header &quot;Content-Type: application/json&quot; --data &#39;{&quot;jsonrpc&quot;:&quot;2.0&quot;,&quot;method&quot;:&quot;web3_clientVersion&quot;,&quot;params&quot;:[],&quot;id&quot;:1}&#39; https://&lt;node-url&gt;
+</pre></div>
+
 <p>If you get a response like the following then you have configured the correct endpoint.</p>
-<p><code>bash
-{"jsonrpc":"2.0","id":1,"result":"Geth/v1.8.12-stable/linux-amd64/go1.10.8"}</code></p>
+<div class="codehilite"><pre><span></span>{&quot;jsonrpc&quot;:&quot;2.0&quot;,&quot;id&quot;:1,&quot;result&quot;:&quot;Geth/v1.8.12-stable/linux-amd64/go1.10.8&quot;}
+</pre></div>
+
 </details>
 <details class="warning"><summary>I'm trying to upload a contract metadata file but it's failing</summary><p>Please refer to the <a href="../metadata/">Contract Registry</a> documentation.</p>
 </details>

@@ -503,35 +503,35 @@ Epirus already installed. It requires an active AWS subscription.</p>
 <p>You will need to provide details of the RPC endpoint for your Hyperledger Besu/Quorum/Ethereum node. </p>
 <p>Copy the RPC endpoint for your node, such as <code>http://&lt;your-service-url&gt;:8545</code> (the default RPC port is 8545). This is the same URL you use to attach a console to your node - i.e. <code>geth attach http://&lt;your-service-url&gt;:8545</code> (for more information, head <a href="https://github.com/ethereum/wiki/wiki/JSON-RPC#json-rpc-endpoint">here</a>).</p>
 <p>Once the virtual machine has been deployed, launch a terminal on the machine:</p>
-<p>ssh -i <keyfile> ubuntu@<machine name></p>
-<p>Then copy the HTTPS access keys with node URL, such as <code>http://&lt;your-service-url&gt;</code></p>
-<p>Once the virtual machine has been deployed, launch a terminal on the machine. Then run the following command to configure the node (<strong>please note AWS requires authentication credentials to be configured</strong>):</p>
-<div class="codehilite"><pre><span></span>$ sudo epirus setup
-Configuring Epirus instance
-
-Please enter a username: &lt;enter username&gt;
-New password: &lt;enter password&gt;
-Re-type new password: &lt;re-enterpassword&gt;
-Adding password <span class="k">for</span> user &lt;username&gt;
-
-Please enter node URL: http://&lt;your-service-url&gt;
-Successfully connected to http://&lt;your-service-url&gt;
-Configuration written to /usr/local/src/epirus/epirus.conf
-
-You can <span class="k">then</span> start the Epirus service:
-
-$ sudo systemctl start epirus.service
+<div class="codehilite"><pre><span></span><span class="go">ssh -i &lt;keyfile&gt; ubuntu@&lt;machine name&gt;</span>
 </pre></div>
 
+<p>Then copy the HTTPS access keys with node URL, such as <code>http://&lt;your-service-url&gt;</code></p>
+<p>Once the virtual machine has been deployed, launch a terminal on the machine. Then run the following command to configure the node (<strong>please note AWS requires authentication credentials to be configured</strong>):</p>
+<div class="codehilite"><pre><span></span><span class="gp">$</span> sudo epirus setup
+<span class="go">Configuring Epirus instance</span>
+
+<span class="go">Please enter a username: &lt;enter username&gt;</span>
+<span class="go">New password: &lt;enter password&gt;</span>
+<span class="go">Re-type new password: &lt;re-enter password&gt;</span>
+<span class="go">Adding password for user &lt;username&gt;</span>
+
+<span class="go">Please enter node URL: http://&lt;your-service-url&gt;</span>
+<span class="go">Successfully connected to http://&lt;your-service-url&gt;</span>
+<span class="go">Configuration written to /usr/local/src/epirus/epirus.conf</span>
+
+<span class="go">You can then start the Epirus service:</span>
+
+<span class="gp">$</span> sudo systemctl start epirus.service
+</pre></div>
 
 <p>You will be able to access the Explorer UI via <code>http://vm-ip-address-or-hostname</code>, providing the authentication credentials you specified when prompted.</p>
 <p>Please allow a few minutes for the service to fully initialise and display data when initially run. It will automatically start up on subsequent reboots.</p>
 <p><img alt="loading screen" src="../img/loading.png" /></p>
 <p>Please note, it can take a while (multiple hours) to display token and contract details as it needs to process the entire blockchain history.</p>
 <p>If you need to modify or create additional access credentials, you can use the following command:</p>
-<div class="codehilite"><pre><span></span>sudo epirus passwd &lt;new or existing username&gt;
+<div class="codehilite"><pre><span></span><span class="go">sudo epirus passwd &lt;new or existing username&gt;</span>
 </pre></div>
-
 
 <h2 id="enterprise">Enterprise<a class="headerlink" href="#enterprise" title="Permanent link">&para;</a></h2>
 <p>Web3 Labs also provides hosted Blockchain Explorer instances - these can be hosted within your cloud subscription or hosted by us.</p>
