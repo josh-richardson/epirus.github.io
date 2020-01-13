@@ -546,7 +546,27 @@ Epirus already installed. It requires an active AWS subscription.</p>
 </ul>
 <p>For further information please <a href="mailto:hi@web3labs.com">email us</a>. </p>
 <h2 id="free">Free<a class="headerlink" href="#free" title="Permanent link">&para;</a></h2>
-<p>A free, feature limited version of Epirus is available <a href="https://github.com/blk-io/epirus-free">here</a>. This version is updated periodically, unlike the Azure and SaaS offerings which are constantly being updated with the latest features.</p>
+<p>A free, feature limited version of Epirus is available. This version is updated periodically, unlike the Azure and SaaS offerings which are constantly being updated with the latest features.</p>
+<p>To get started with the free version, run the following command to download Epirus:</p>
+<div class="codehilite"><pre><span></span>git clone https://github.com/blk-io/epirus-free.git
+</pre></div>
+
+<p>Navigate to the <code>epirus-free</code> directory directory and run the instance with:</p>
+<div class="codehilite"><pre><span></span><span class="nb">cd</span> epirus-free
+<span class="nv">NODE_ENDPOINT</span><span class="o">=</span>http://&lt;node_endpoint&gt; docker-compose up
+</pre></div>
+
+<p>Note that if setting <code>NODE_ENDPOINT</code> to a local Ethereum instance, you may need to use the IP address associated with the Docker bridged interface, often denoted by <code>docker0</code>.</p>
+<p>Append the <code>-d</code> argument to run the containers in the backgroud</p>
+<p>You will be able to access the Explorer UI via:</p>
+<p><a href="http://localhost/">http://localhost</a></p>
+<p>To stop the containers use:</p>
+<div class="codehilite"><pre><span></span>docker-compose down
+</pre></div>
+
+<p>To connect to new network you should remove the volumes associated with the old network</p>
+<div class="codehilite"><pre><span></span>docker-compose down -v
+</pre></div>
                 
                   
                 
