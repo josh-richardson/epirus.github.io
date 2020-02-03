@@ -400,12 +400,30 @@
 <details class="info"><summary>Are you hiring?</summary><p>Please head to our <a href="https://web3labs.workable.com/">jobs portal</a> for current listings.</p>
 </details>
 <details class="info"><summary>How can I manage users credentials in Epirus on AWS?</summary><p>On the host, you can use the <code>passwd</code> command to add or update user credentials.</p>
-<div class="codehilite"><pre><span></span>$ sudo epirus passwd &lt;username&gt;
-New password: &lt;enter password&gt;
-Re-type new password: &lt;re-enter password&gt;
-Updating password for user &lt;username&gt;
+</details>
+<details class="warning"><summary>Unable to create instance on Azure - your deployment failed</summary><p>Due to a timeout issue, provisioning of Epirus has failed on Azure on some occasions.</p>
+<p>If you hit this issue, you will see the following error:</p>
+<p><img alt="Deployment failed" src="../img/issue-deployment-failed/deployment_failed.png" /></p>
+<p>The specific message is:</p>
+<div class="codehilite"><pre><span></span>epirus.service failed because the control process exited with error code.
 </pre></div>
 
+<p>To resolve the error, you will need to logon to the host that was created. To do this, click on the virtual machine name:</p>
+<p><img alt="Deployment hostname" src="../img/issue-deployment-failed/deployment_hostname.png" /></p>
+<p>Then copy the DNS name of the host:</p>
+<p><img alt="Host DNS name" src="../img/issue-deployment-failed/dns_name.png" /></p>
+<p>Logon to the host by running:</p>
+<div class="codehilite"><pre><span></span>ssh -i ~/.ssh/&lt;private-key&gt; epirus@&lt;hostname&gt;.&lt;region&gt;.cloudapp.azure.com
+</pre></div>
+
+<p>Then run the following to start Epirus manually:</p>
+<div class="codehilite"><pre><span></span>sudo systemctl start epirus.service
+</pre></div>
+
+<p>Epirus should start, and if you head to the hostname in your browser, you should see the Epirus loading screen:</p>
+<p><img alt="Loading screen" src="../img/loading.png" /></p>
+<p>After a few minutes you should see Epirus has started successfully:</p>
+<p><img alt="Dashboard" src="../img/dashboard.png" /></p>
 </details>
 <details class="warning"><summary>Unable to create instance on Azure - the template deployment is not valid</summary><p><img alt="Azure creation error" src="../img/azure_create_error.png" /></p>
 <div class="codehilite"><pre><span></span>The template deployment &#39;blk-technologies.azure-blockchain-explorer-templa-20190701100047&#39; is not valid according to the validation procedure. The tracking id is &#39;494a6331-33c6-4c13-8871-359117dfa70b&#39;. See inner errors for details. Please see https://aka.ms/arm-deploy for usage details.
